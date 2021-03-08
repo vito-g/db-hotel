@@ -30,6 +30,11 @@ SELECT *
 FROM `ospiti`
 WHERE LEFT(SUBSTRING_INDEX(Name, ' ', -1), 1) = 'E';
 
+OPPURE:
+
+SELECT *
+FROM `ospiti`
+WHERE Name LIKE 'a%';
 
 6- Selezionare tutti gli ospiti che abbiano meno di 30 anni
 
