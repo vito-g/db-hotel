@@ -1,0 +1,45 @@
+1- Select all the hotel's guests
+
+SELECT *
+FROM `ospiti`;
+
+
+2- Selezionare tutti gli ospiti con document type = a CI
+
+SELECT *
+FROM `ospiti`
+WHERE document_type = 'CI';
+
+
+3- Selezionare i paganti che abbiano un ospite id associato
+
+SELECT *
+FROM `paganti`
+WHERE `ospite_id` <> 0;
+
+4- Selezionare tutte le stanze del primo piano
+
+SELECT *
+FROM `stanze`
+WHERE `floor` = 1;
+
+
+5- Selezionare tutti gli ospiti che iniziano per E
+
+SELECT *
+FROM `ospiti`
+WHERE LEFT(SUBSTRING_INDEX(Name, ' ', -1), 1) = 'E';
+
+
+6- Selezionare tutti gli ospiti che abbiano meno di 30 anni
+
+SELECT *
+FROM `ospiti`
+WHERE `date_of_birth` > "1991-12-31";
+
+
+7- Seleziona tutte le prenotazioni precedenti a maggio 2018
+
+SELECT *
+FROM `prenotazioni`
+WHERE `created_at` < "2018-5-1";
