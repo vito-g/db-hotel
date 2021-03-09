@@ -85,7 +85,7 @@ Group by
       GROUP BY HOUR(created_at)
       ORDER BY conteggio DESC;
 ------------------------------------------------------------
-      Quante prenotazioni hanno fatto gli ospiti?
+      Stampa in ordine decrescente quante prenotazioni hanno fatto gli ospiti?
 
       SELECT COUNT(ospite_id), ospite_id
       FROM `prenotazioni_has_ospiti`
