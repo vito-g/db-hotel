@@ -59,7 +59,9 @@
 Group by
 ●    Conta gli ospiti raggruppandoli per anno di nascita ???????????????????????????????????????????????????????????
 
-
+      SELECT COUNT(id), YEAR(`date_of_birth`) as 'YEAR'
+      FROM `ospiti`
+      GROUP BY YEAR(`date_of_birth`);
 
 
 ●    Somma i prezzi dei pagamenti raggruppandoli per status
@@ -71,20 +73,38 @@ Group by
 
 ●    Conta quante volte è stata prenotata ogni stanza  ???????????????????????????????????????????????????????????????
 
-
+      SELECT COUNT(stanza_id), stanza_id
+      FROM `prenotazioni`
+      GROUP BY stanza_id;
 
 
 ●    Fai una analisi per vedere se ci sono ore in cui le prenotazioni sono più frequenti
 
-      
+      SELECT COUNT(HOUR(created_at)) as conteggio, HOUR(created_at)
+      FROM `prenotazioni`
+      GROUP BY HOUR(created_at)
+      ORDER BY conteggio DESC;
+
 
 
 ●    Quante prenotazioni ha fatto l’ospite che ha fatto più prenotazioni?
+
+
+
+
 Join
 ●    Come si chiamano gli ospiti che hanno fatto più di due prenotazioni?
+
+
+
+
+
 ●    Stampare tutti gli ospiti per ogni prenotazione
 ●    Stampare Nome, Cognome, Prezzo e Pagante per tutte le prenotazioni fatte a Maggio 2018
 ●    Fai la somma di tutti i prezzi delle prenotazioni per le stanze del primo piano
+
+
+
 ●    Prendi i dati di fatturazione per la prenotazione con id=7
 ●    Le stanze sono state tutte prenotate almeno una volta? (Visualizzare le stanze non ancora prenotate)
 Bonus: provate a connettervi utilizzando mysqli con il vostro database in locale. Potete utilizzare il codice visto in classe e pushato in boolean code
