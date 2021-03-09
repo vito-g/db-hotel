@@ -71,7 +71,8 @@ Group by
       GROUP BY status;
 
 
-●    Conta quante volte è stata prenotata ogni stanza  
+●    Conta quante volte è stata prenotata ogni stanza
+
       SELECT COUNT(stanza_id), stanza_id
       FROM `prenotazioni`
       GROUP BY stanza_id;
@@ -83,12 +84,16 @@ Group by
       FROM `prenotazioni`
       GROUP BY HOUR(created_at)
       ORDER BY conteggio DESC;
-
-
-
+------------------------------------------------------------
+      Quante prenotazioni hanno fatto gli ospiti?
+      
+      SELECT COUNT(ospite_id), ospite_id
+      FROM `prenotazioni_has_ospiti`
+      GROUP BY ospite_id
+      ORDER BY COUNT(ospite_id) DESC;
+------------------------------------------------------------
 ●    Quante prenotazioni ha fatto l’ospite che ha fatto più prenotazioni?
 
-x
 
 
 Join
