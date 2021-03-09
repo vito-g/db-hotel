@@ -86,7 +86,7 @@ Group by
       ORDER BY conteggio DESC;
 ------------------------------------------------------------
       Quante prenotazioni hanno fatto gli ospiti?
-      
+
       SELECT COUNT(ospite_id), ospite_id
       FROM `prenotazioni_has_ospiti`
       GROUP BY ospite_id
@@ -94,6 +94,10 @@ Group by
 ------------------------------------------------------------
 ●    Quante prenotazioni ha fatto l’ospite che ha fatto più prenotazioni?
 
+      SELECT COUNT(ospite_id), ospite_id
+      FROM `prenotazioni_has_ospiti`
+      GROUP BY ospite_id
+      ORDER BY COUNT(ospite_id) DESC LIMIT 1;
 
 
 Join
